@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   nginx:
-    build:
-      context: ./requirements/nginx
-      dockerfile: Dockerfile
+    build: ./requirements/nginx
     container_name: nginx
     ports:
       - "443:443"
@@ -17,9 +15,7 @@ services:
     restart: always
 
   wordpress:
-    build:
-      context: ./requirements/wordpress
-      dockerfile: Dockerfile
+    build: ./requirements/wordpress
     container_name: wordpress
     volumes:
       - wordpress_data:/var/www/html
@@ -32,9 +28,7 @@ services:
     restart: always
 
   mariadb:
-    build:
-      context: ./requirements/mariadb
-      dockerfile: Dockerfile
+    build: ./requirements/mariadb
     container_name: mariadb
     volumes:
       - mariadb_data:/var/lib/mysql
